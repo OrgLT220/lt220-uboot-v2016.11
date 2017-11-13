@@ -60,6 +60,11 @@ u32 get_periph_clk(void);
 
 void lcdif_power_down(void);
 
+/* new - added by ignasi.soler */
+int mmc_get_env_dev(void);
+void board_late_mmc_env_init(void);
+
+
 int mxs_reset_block(struct mxs_register_32 *reg);
 int mxs_wait_mask_set(struct mxs_register_32 *reg, u32 mask, u32 timeout);
 int mxs_wait_mask_clr(struct mxs_register_32 *reg, u32 mask, u32 timeout);

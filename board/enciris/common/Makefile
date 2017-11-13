@@ -62,6 +62,8 @@ endif
 # obj-$(CONFIG_ZM7300)		+= zm7300.o
 obj-$(CONFIG_POWER_PFUZE100)	+= pfuze.o
 
+obj-y				+= mmc.o
+
 # obj-$(CONFIG_LS102XA_STREAM_ID)	+= ls102xa_stream_id.o
 
 # deal with common files for P-series corenet based devices

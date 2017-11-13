@@ -12,7 +12,7 @@
 #include "mx7_common.h"
 
 #define CONFIG_DBG_MONITOR
-#define PHYS_SDRAM_SIZE			SZ_1G
+#define PHYS_SDRAM_SIZE			SZ_256M		/* changed from mx7dsabresd.h */
 
 #define CONFIG_MXC_UART_BASE            UART1_IPS_BASE_ADDR
 
@@ -27,12 +27,26 @@
 #define CONFIG_MII
 #define CONFIG_FEC_XCV_TYPE             RGMII
 #define CONFIG_ETHPRIME                 "FEC"
-#define CONFIG_FEC_MXC_PHYADDR          0
+/* #define CONFIG_FEC_MXC_PHYADDR          0 */
 
 #define CONFIG_PHYLIB
 #define CONFIG_PHY_BROADCOM
-/* ENET1 */
+
+
+/* ENET1 and ENET2 */
+/* #define IMX_FEC_BASE			ENET_IPS_BASE_ADDR */
+
+#define CONFIG_FEC_ENET_DEV 0
+
+#if (CONFIG_FEC_ENET_DEV == 0)
 #define IMX_FEC_BASE			ENET_IPS_BASE_ADDR
+#define CONFIG_FEC_MXC_PHYADDR          0x0
+#elif (CONFIG_FEC_ENET_DEV == 1)
+#define IMX_FEC_BASE			ENET2_IPS_BASE_ADDR
+#define CONFIG_FEC_MXC_PHYADDR          0x1
+#endif
+
+
 
 /* MMC Config*/
 #define CONFIG_SYS_FSL_ESDHC_ADDR       0
@@ -105,7 +119,7 @@
 	"console=ttymxc0\0" \
 	"fdt_high=0xffffffff\0" \
 	"initrd_high=0xffffffff\0" \
-	"fdt_file=imx7d-sdb.dtb\0" \
+	"fdt_file=imx7d-lt220.dtb\0" \
 	"fdt_addr=0x83000000\0" \
 	"boot_fdt=try\0" \
 	"ip_dyn=yes\0" \

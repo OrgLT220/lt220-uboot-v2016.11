@@ -73,6 +73,8 @@ enum {
 	PMIC_NUM_OF_REGS	= 0x7F,
 };
 
+#define PFUZE3000_SW1AB_SETP(x) (((x) - 700) / 25)
+
 int power_pfuze3000_init(unsigned char bus);
 
 #endif
