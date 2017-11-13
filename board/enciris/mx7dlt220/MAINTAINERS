@@ -1,0 +1,7 @@
+MX7DLT220 BOARD
+M:	Ignasi Soler <is@enciris.com>
+S:	Maintained
+F:	board/freescale/mx7dlt220
+F:	include/configs/mx7dlt220.h
+F:	configs/mx7dlt220_defconfig
+F:	configs/mx7dlt220_secure_defconfig

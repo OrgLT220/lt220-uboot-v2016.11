@@ -1,0 +1,12 @@
+if TARGET_MX7DLT220
+
+config SYS_BOARD
+	default "mx7dlt220"
+
+config SYS_VENDOR
+	default "enciris"
+
+config SYS_CONFIG_NAME
+	default "mx7dlt220"
+
+endif
