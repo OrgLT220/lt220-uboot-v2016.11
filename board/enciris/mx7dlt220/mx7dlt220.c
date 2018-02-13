@@ -169,7 +169,7 @@ u32 get_board_rev(void)
 int checkboard(void)
 {
 	printf("Enciris Technologies, SAS - U-Boot for LT220 Rev0 Assy0\n");
-	printf("Visca Catalunya Lliure i Independent en forma de República!\n");
+	printf("Freedom political prisoners!\n");
 
 	return 0;
 }
@@ -591,22 +591,22 @@ int power_init_board(void)
 	pmic_reg_read(p, PFUZE3000_REVID, &rev_id);
 	printf("PMIC: PFUZE3000 DEV_ID=0x%x REV_ID=0x%x\n", reg, rev_id);
 
-	/* disable Low Power Mode during standby mode */
+	// disable Low Power Mode during standby mode
 	pmic_reg_read(p, PFUZE3000_LDOGCTL, &reg);
 	reg |= 0x1;
 	pmic_reg_write(p, PFUZE3000_LDOGCTL, reg);
 
-	/* SW1A/1B mode set to APS/APS */
+	// SW1A/1B mode set to APS/APS
 	reg = 0x8;
 	pmic_reg_write(p, PFUZE3000_SW1AMODE, reg);
 	pmic_reg_write(p, PFUZE3000_SW1BMODE, reg);
 
-	/* SW1A/1B standby voltage set to 0.975V */
+	// SW1A/1B standby voltage set to 0.975V
 	reg = 0xb;
 	pmic_reg_write(p, PFUZE3000_SW1ASTBY, reg);
 	pmic_reg_write(p, PFUZE3000_SW1BSTBY, reg);
 
-	/* decrease SW1B normal voltage to 0.975V */
+	// decrease SW1B normal voltage to 0.975V
 	pmic_reg_read(p, PFUZE3000_SW1BVOLT, &reg);
 	reg &= ~0x1f;
 	reg |= PFUZE3000_SW1AB_SETP(975);

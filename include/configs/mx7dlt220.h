@@ -9,7 +9,7 @@
 #ifndef __MX7D_LT220_CONFIG_H
 #define __MX7D_LT220_CONFIG_H
 
-#include "mx7_common.h"
+#include "mx7dlt220_common.h"
 
 #define CONFIG_DBG_MONITOR
 #define PHYS_SDRAM_SIZE			SZ_256M		/* changed from mx7dsabresd.h */
@@ -22,6 +22,7 @@
 #define CONFIG_BOARD_EARLY_INIT_F
 #define CONFIG_BOARD_LATE_INIT
 
+
 /* Network */
 #define CONFIG_FEC_MXC
 #define CONFIG_MII
@@ -31,6 +32,7 @@
 
 #define CONFIG_PHYLIB
 #define CONFIG_PHY_BROADCOM
+
 
 
 /* ENET1 and ENET2 */
@@ -48,10 +50,12 @@
 
 
 
+
 /* MMC Config*/
 #define CONFIG_SYS_FSL_ESDHC_ADDR       0
 
 /* PMIC */
+
 #define CONFIG_POWER
 #define CONFIG_POWER_I2C
 #define CONFIG_POWER_PFUZE3000
@@ -259,6 +263,8 @@
 #define CONFIG_USBD_HS
 
 #define CONFIG_USB_FUNCTION_MASS_STORAGE
+
+
 
 #ifdef CONFIG_VIDEO
 #define CONFIG_VIDEO_MXS
